@@ -4,7 +4,8 @@ const Ajv = require('ajv');
 const addFormats = require('ajv-formats');
 const userSchema = require('../schemas/userSchema.json');
 
-const dataFilePath = path.join(__dirname, '..', 'leadData.json');
+
+const dataFilePath = path.join(__dirname, '..', './data/userData.json');
 
 
 const ajv = new Ajv();
@@ -33,7 +34,7 @@ exports.getAllUsers = (req, res) => {
 exports.addUser = (req, res) => {
     const validationErrors = validateUser(req.body);
     if (validationErrors) {
-        return res.status(400).json({ errors: validationErrors });
+        return res.status(200).json({ errors: validationErrors });
     }
 
     const users = readData();
