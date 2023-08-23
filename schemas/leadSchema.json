@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "title": "Root Schema",
+    "required": [
+        "leadName",
+        "leadEmail",
+        "leadContact",
+        "leadBirthday"
+    ],
+    "properties": {
+        "leadName": {
+            "type": "string",
+            "title": "The leadName Schema",
+            "examples": [
+                "sahill"
+            ]
+        },
+        "leadEmail": {
+            "type": "string",
+            "title": "The leadEmail Schema",
+            "examples": [
+                "kush@gmail.com"
+            ]
+        },
+        "leadContact": {
+            "type": "string",
+            "title": "The leadContact Schema",
+            "examples": [
+                "8929714332"
+            ]
+        },
+        "leadBirthday": {
+            "type": "string",
+            "title": "The leadBirthday Schema",
+            "examples": [
+                "23/12/2000"
+            ]
+        }
+    },
+    "examples": [{
+        "leadName": "sahill",
+        "leadEmail": "kush@gmail.com",
+        "leadContact": "8929714332",
+        "leadBirthday": "23/12/2000"
+    }]
+}
+
