@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/', userHandler.getAllUsers);
 router.post('/', userHandler.addUser);
+router.post('/addUserColumn',userHandler.addUserColumn);
 router.get('/:id', userHandler.getUserById);
 router.put('/:id', userHandler.updateUserById);
 router.delete('/:id', userHandler.deleteUserById);

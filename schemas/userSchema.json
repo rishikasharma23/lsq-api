@@ -3,6 +3,8 @@
     "properties": {
         "name": {
             "type": "string",
+            "minLength": 1,
+            "maxLength": 50,
             "description": "User's name"
         },
         "email": {
@@ -12,8 +14,32 @@
         },
         "dob": {
             "type": "string",
-            "description": "User's date of birth in dd/mm/yyyy format"
-        }
+            "description": "User's date of birth in dd/mm/yyyy format",
+            "pattern": "^(19|20)\\d\\d-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "mobileNumber": {
+            "type": "string",
+            "pattern": "^[6-9][0-9]{9}$",
+            "description": "The 10-digit mobile number. Typically starts with 6, 7, 8, or 9."
+        },
+        "yearsOfExperience": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 50,
+            "description": "Number of years of professional experience, can be a decimal."
+          },
+
+          "aadhaarNumber": {
+            "type": "string",
+            "pattern": "^[2-9][0-9]{11}$",
+            "description": "12-digit unique identification Aadhaar number."
+          },
+          "gender": {
+            "type": "string",
+            "enum": ["Male", "Female", "Other"],
+            "description": "Gender of the individual."
+          }
+
     },
     "required": ["name", "email", "dob"]
 }

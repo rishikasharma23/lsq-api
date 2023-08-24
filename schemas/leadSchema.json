@@ -35,13 +35,42 @@
             "examples": [
                 "23/12/2000"
             ]
+        },
+        "product": {
+            "type": "string",
+            "enum": [
+                "A",
+                "B",
+                "C"
+            ],
+            "description": "ABC product"
+        },
+        "nationality": {
+            "type": "string",
+            "enum": [
+                "Indian",
+                "American",
+                "Canadian",
+                "British",
+                "French"
+            ],
+            "description": "User's nationality."
+        },
+        "smokingStatus": {
+            "type": "string",
+            "enum": [
+                "Smoker",
+                "Non-Smoker"
+            ],
+            "description": "Specifies if the person is a Smoker or Non-Smoker."
         }
     },
-    "examples": [{
-        "leadName": "sahill",
-        "leadEmail": "kush@gmail.com",
-        "leadContact": "8929714332",
-        "leadBirthday": "23/12/2000"
-    }]
+    "examples": [
+        {
+            "leadName": "sahil",
+            "leadEmail": "kush@gmail.com",
+            "leadContact": "8929714332",
+            "leadBirthday": "23/12/2000"
+        }
+    ]
 }
-

@@ -98,3 +98,25 @@ exports.deleteUserById = (req, res) => {
         res.status(404).json({ message: 'User not found.' });
     }
 };
+
+exports.addUserColumn = (req, res) => {
+    try {
+        const rawData = fs.readFileSync(dataFilePath);
+        const data = JSON.parse(rawData);
+        
+        // Extract the key-value pair from the request body
+        const [key, value] = Object.entries(req.body)[0];
+        
+        // Add the new key-value pair to each object
+        const updatedData = data.map(obj => ({
+            ...obj,
+            [key]: value
+        }));
+    
+        fs.writeFileSync(dataFilePath, JSON.stringify(updatedData, null, 2));
+        res.send({ success: true });
+    } catch (error) {
+        console.error("Error in addColumn:", error);
+        res.status(500).send({ success: false, message: "Internal Server Error" });
+    }
+};

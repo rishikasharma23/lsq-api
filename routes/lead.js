@@ -5,6 +5,7 @@ const router=express.Router();
 
 router.get('/',leadHandler.getAllLeads);
 router.post('/',leadHandler.addLead);
+router.post('/addLeadColumn',leadHandler.addLeadColumn);
 router.get('/:id',leadHandler.getLeadById);
 router.put('/:id',leadHandler.updateLeadsById);
 router.delete('/:id',leadHandler.deleteLeadById);
